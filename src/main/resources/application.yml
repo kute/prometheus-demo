@@ -1,0 +1,36 @@
+server:
+  port: 8490
+spring:
+  application:
+    name: prometheus-demo
+  main:
+    allow-bean-definition-overriding: true
+management:
+  endpoint:
+    prometheus:
+      enabled: false
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: ['health', 'apple', 'fruit', 'a', 'b']
+#      base-path: '/'
+#      path-mapping:
+#        prometheus: /metrics
+  metrics:
+    tags:
+      application: ${spring.application.name}
+    export:
+      ticket:
+        enabled: true
+      im:
+        enabled: true
+
+
+
+
+
+
+
+
